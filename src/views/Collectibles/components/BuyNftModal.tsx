@@ -110,7 +110,7 @@ const TransferNftModal: React.FC<TransferNftModalProps> = ({ nft, tokenIds, onSu
           {t('Cancel')}
         </Button>
         <Button width="100%" onClick={handleConfirm} disabled={!account || isLoading || !value}>
-          {t('Confirm')}
+          {t('Buy')}
         </Button>
       </Actions>
     </Modal>

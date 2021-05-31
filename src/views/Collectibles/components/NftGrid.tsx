@@ -12,7 +12,7 @@ const NftGrid = styled.div`
   }
 
   ${({ theme }) => theme.mediaQueries.md} {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 `
 

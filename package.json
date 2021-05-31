@@ -1,7 +1,7 @@
 {
-  "name": "pancake-frontend",
+  "name": "pancake-nft",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
@@ -81,5 +81,9 @@
     "prettier": "^2.3.0",
     "source-map-explorer": "^2.5.2",
     "ts-node": "^9.1.1"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/shaansundar/PancakeNFTs.git",
+  "author": "Shaan Sundar <shaan.idtindia@gmail.com>",
+  "license": "MIT"
 }

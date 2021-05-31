@@ -7,21 +7,13 @@ import { fetchWalletNfts } from 'state/collectibles'
 import { useGetCollectibles } from 'state/hooks'
 import NftCard from './NftCard'
 import NftGrid from './NftGrid'
-import BunnySpecialCard from './NftCard/BunnySpecialCard'
-import EasterNftCard from './NftCard/EasterNftCard'
 
 /**
  * A map of bunnyIds to special campaigns (NFT distribution)
  * Each NftCard is responsible for checking it's own claim status
  *
  */
-const nftComponents = {
-  hiccup: BunnySpecialCard,
-  bullish: BunnySpecialCard,
-  'easter-storm': EasterNftCard,
-  'easter-flipper': EasterNftCard,
-  'easter-caker': EasterNftCard,
-}
+const nftComponents = {}
 
 const NftList = () => {
   const { tokenIds } = useGetCollectibles()

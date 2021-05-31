@@ -19,6 +19,7 @@ import { useTranslation } from 'contexts/Localization'
 import { Nft } from 'config/constants/types'
 import InfoRow from '../InfoRow'
 import TransferNftModal from '../TransferNftModal'
+import BuyNftModal from '../BuyNftModal'
 import ClaimNftModal from '../ClaimNftModal'
 import Preview from './Preview'
 
@@ -31,12 +32,12 @@ export interface NftCardProps {
 }
 
 const Header = styled(InfoRow)`
-  min-height: 28px;
+  min-height: 10px;
 `
 
 const DetailsButton = styled(Button).attrs({ variant: 'text' })`
   height: auto;
-  padding: 16px 24px;
+  padding: 15px 15px;
 
   &:hover:not(:disabled):not(:active) {
     background-color: transparent;
@@ -48,7 +49,7 @@ const DetailsButton = styled(Button).attrs({ variant: 'text' })`
 `
 
 const InfoBlock = styled.div`
-  padding: 24px;
+  padding: 20px;
 `
 
 const NftCard: React.FC<NftCardProps> = ({ nft, canClaim = false, tokenIds = [], onClaim, refresh }) => {
@@ -69,6 +70,9 @@ const NftCard: React.FC<NftCardProps> = ({ nft, canClaim = false, tokenIds = [],
 
   const [onPresentTransferModal] = useModal(
     <TransferNftModal nft={nft} tokenIds={tokenIds} onSuccess={handleSuccess} />,
+  )
+  const [onPresentBuyModal] = useModal(
+    <BuyNftModal nft={nft} tokenIds={tokenIds} onSuccess={handleSuccess} />,
   )
   const [onPresentClaimModal] = useModal(<ClaimNftModal nft={nft} onSuccess={handleSuccess} onClaim={onClaim} />)
 
@@ -111,6 +115,9 @@ const NftCard: React.FC<NftCardProps> = ({ nft, canClaim = false, tokenIds = [],
             </Text>
           </InfoBlock>
         )}
+        <Button width="100%" padding="10px" scale="md" variant="primary" mt="0px" onClick={onPresentTransferModal}>
+            {t('Buy')}
+        </Button>
       </CardFooter>
     </Card>
   )

@@ -17,8 +17,11 @@ const Collectibles = () => {
   return (
     <Page>
       <StyledHero>
-        <Heading as="h1" scale="xxl" color="secondary">
+        <Heading as="h1" scale="xxl" color="secondary" paddingBottom="10px">
           {t('Flea Market')}
+        </Heading>
+        <Heading as="h2" color="primary">
+          {t('Get the best deals here!')}
         </Heading>
       </StyledHero>
       <NftList />
